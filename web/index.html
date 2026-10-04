@@ -1,10 +1,23 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}</style>
-<meta name="description" content="Reframe a headshot to the 2x2 inch photo rules for OPT (Form I-765) and save a 600x600 JPEG. Runs entirely in your browser.">
+<meta name="description" content="Free 2×2 photo tool for OPT (Form I-765): crop to the 1–1⅜ inch head size, whiten the background and save a 600×600 JPEG. Private: your photo never leaves your device.">
 <meta name="theme-color" content="#1d4f7a">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>OPT Photo Fixer</title>
+<title>OPT Photo Fixer – Free 2×2 Photo Tool for Form I-765</title>
+<link rel="canonical" href="https://tbless19.github.io/opt-photo-fixer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="OPT Photo Fixer – Free 2×2 Photo Tool for Form I-765">
+<meta property="og:description" content="Crop and resize your photo to the 2×2 inch rules (head 1–1⅜ in), whiten the background and save a 600×600 JPEG. Free, private, runs in your browser.">
+<meta property="og:url" content="https://tbless19.github.io/opt-photo-fixer/">
+<meta property="og:image" content="https://tbless19.github.io/opt-photo-fixer/icons/icon-512.png">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"OPT Photo Fixer","url":"https://tbless19.github.io/opt-photo-fixer/",
+ "applicationCategory":"PhotographyApplication","operatingSystem":"Any (web browser), Android",
+ "description":"Free tool that crops and resizes a headshot to 2×2 inch photo rules for Form I-765 (OPT), adjusts the background toward white, and exports a 600×600 JPEG under 240 KB. Photos never leave your device.",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
 <style>
 /* Layout: two working panels (your photo → 2×2 result) over a strip of compliance checks; stacks on phones */
 :root{
@@ -56,6 +69,10 @@ canvas{display:block;max-width:100%;border-radius:6px;background:var(--line)}
 .legend span::before{content:"";display:inline-block;width:14px;height:0;border-top:2px dashed var(--guide);vertical-align:middle;margin-right:6px}
 .grid.one{grid-template-columns:minmax(0,1fr)}
 .colgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px 28px}
+.guide-body{max-width:68ch;display:grid;gap:10px;font-size:.95rem}
+.guide-body p,.guide-body ul{margin:0}
+.guide-body ul{padding-left:1.2rem;display:grid;gap:6px}
+.guide h3{font:600 1rem var(--body);margin:.6rem 0 0}
 footer{font-size:.82rem;color:var(--muted);max-width:75ch}
 </style>
 
@@ -133,6 +150,27 @@ footer{font-size:.82rem;color:var(--muted);max-width:75ch}
       </div>
     </section>
   </div>
+
+  <section class="panel guide" aria-labelledby="h-guide">
+    <h2 id="h-guide">About the 2×2 photo rules</h2>
+    <div class="guide-body">
+      <p>USCIS asks for two identical passport-style photos with Form I-765, the work permit application used for OPT and STEM OPT. They follow the same 2×2 inch rules as U.S. passport photos:</p>
+      <ul>
+        <li><b>Size:</b> 2 × 2 inches (51 × 51 mm). For a digital copy, a square of at least 600 × 600 pixels.</li>
+        <li><b>Head size:</b> 1 to 1⅜ inches (25–35 mm) from the bottom of the chin to the top of the hair, which is 50–69% of the photo height.</li>
+        <li><b>Background:</b> plain white or off-white, with no shadows, patterns or objects.</li>
+        <li><b>Pose:</b> facing the camera, neutral expression or a natural smile, both eyes open, no glasses.</li>
+        <li><b>Recent:</b> taken within the last 30 days, in color.</li>
+      </ul>
+      <h3>How to use this tool</h3>
+      <p>Upload a photo taken against a light wall from a few feet away. Tap the top of your hair and the bottom of your chin. The tool scales and centers the photo to the 2×2 proportions and checks the head size, the space above your head, the resolution and the background color. Use <b>Auto white background</b> to correct a cream or grey wall, then save the 600 × 600 JPEG. Print it at 2 × 2 inches at a pharmacy or photo kiosk.</p>
+      <h3>Is my photo uploaded anywhere?</h3>
+      <p>No. Everything happens on your own device. The photo is never sent to a server.</p>
+      <h3>Can this guarantee my photo will be accepted?</h3>
+      <p>No tool can. This one crops, scales and adjusts color, but it can't fix shadows, uneven lighting or a photo taken too close. Compare your result with the official requirements before you submit it.</p>
+      <p class="hint">OPT Photo Fixer is an independent, free tool. It is not affiliated with USCIS, the U.S. Department of State or any government agency.</p>
+    </div>
+  </section>
 
   <footer>This tool only crops and scales. It can't fix lighting, shadows or expression, and it can't invent missing parts of your shoulders. If the checks say a lot of the frame is filled in, retake the photo from farther away. Run the final file through the State Department photo tool before submitting. Your photo stays on your phone and is never uploaded.</footer>
 </div>

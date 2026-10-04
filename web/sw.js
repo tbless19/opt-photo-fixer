@@ -1,5 +1,5 @@
 // Offline support: keep the app files cached; fetch fresh copies when online.
-const CACHE = 'opt-photo-v1';
+const CACHE = 'opt-photo-v2';
 const FILES = ['./', 'index.html', 'manifest.webmanifest',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/maskable-192.png', 'icons/maskable-512.png', 'icons/apple-touch-icon.png'];
 
