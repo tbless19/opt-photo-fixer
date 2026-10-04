@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.tbless19.optphoto'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.tbless19.optphoto'
+        minSdk 29
+        targetSdk 35
+        versionCode((System.getenv('GITHUB_RUN_NUMBER') ?: '1') as int)
+        versionName "1.0.${System.getenv('GITHUB_RUN_NUMBER') ?: '0'}"
+    }
+
+    // One fixed key so each new build installs over the previous one.
+    // It's a personal sideload key, not a Play Store key.
+    signingConfigs {
+        app {
+            storeFile file('signing.keystore')
+            storePassword 'optphoto'
+            keyAlias 'optphoto'
+            keyPassword 'optphoto'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.app
+        }
+        debug {
+            signingConfig signingConfigs.app
+        }
+    }
+
+    // The app bundles the same tool as the website (web/index.html)
+    sourceSets {
+        main { assets.srcDirs = ['../web'] }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
